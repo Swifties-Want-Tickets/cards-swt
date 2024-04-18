@@ -1,16 +1,13 @@
 'use client'
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import { Stage, Layer, Rect, Text, Circle, Line, Image, Path } from 'react-konva';
+import { Stage, Layer, Rect, Text, Image, Path } from 'react-konva';
 import './App.css';
 import { Stage as sref } from 'konva/lib/Stage';
-import { Application, ICanvas } from 'pixi.js';
 import useImage from 'use-image';
 import dayjs from 'dayjs';
 
 function App() {
   const imagecontainerref = React.useRef<HTMLDivElement>(null)
-  const [app, setApp] = React.useState<Application | null>(null)
   const [quote, setQuote] = React.useState<string>('Crowd goes wild at her fingertips. Half moonshine, full eclipse')
   const [image, setImage] = React.useState<string>('/img_1.jpeg')
   const ref = React.useRef<sref>(null)
@@ -138,10 +135,9 @@ function App() {
                 data-selected={i === image}
                 onClick={() => {
                   setImage(i)
-                  app?.renderer.render(app.stage)
                 }}
                 className="min-w-6 h-24 overflow-clip bg-white data-[disabled=true]:bg-gray-100 data-[disabled=true]:cursor-default hide-arrows border-gray-300 border rounded-xl flex items-center justify-center data-[selected=true]:border-black transition relative">
-                <img key={index} src={i} alt="image" className="" />
+                <img key={index} src={i} alt={`TTPD background ${index}`} className="" />
               </button>
             ))}
           </div>
@@ -152,7 +148,6 @@ function App() {
                 data-selected={colour === color}
                 onClick={() => {
                   setColor(colour)
-                  app?.renderer.render(app.stage)
                 }}
                 className="min-w-6 h-14 overflow-clip w-1/2 bg-white data-[disabled=true]:bg-gray-100 data-[disabled=true]:cursor-default hide-arrows border-gray-300 border rounded-xl  flex items-center justify-center data-[selected=true]:border-black transition relative">
                 <div key={index} style={{ backgroundColor: colour }} className="w-full h-full rounded-lg"></div>
