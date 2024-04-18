@@ -159,7 +159,7 @@ function App() {
 
 
           <div className='max-w-full overflow-x-auto rounded-xl overflow-y-clip mb-20'>
-            <div className='border mt-2 w-[382px] h-[214px] flex border-gray-300 rounded-xl overflow-clip max-w-full' ref={imagecontainerref}>
+            <div className='border mt-2 w-[382px] min-w-[382px] h-[214px] flex border-gray-300 rounded-xl overflow-clip max-w-full' ref={imagecontainerref}>
               <Stage height={214} width={382} ref={ref}>
                 <Layer>
                   <Rect fill={color} width={382} height={214} />
