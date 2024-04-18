@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react';
+import React /*{ useEffect }*/ from 'react';
 import { Stage, Layer, Rect, Text, Image, Path } from 'react-konva';
 import './App.css';
 import { Stage as sref } from 'konva/lib/Stage';
@@ -72,10 +72,9 @@ function App() {
   }
 
 
-  const [wh, setWh] = React.useState({ width: 0, height: 0 })
   const [color, setColor] = React.useState('#A99F90')
 
-  useEffect(() => {
+  /*useEffect(() => {
     console.log(imagecontainerref.current?.clientHeight)
     console.log(imagecontainerref.current?.clientWidth)
     setWh({ width: imagecontainerref.current?.clientWidth || 0, height: imagecontainerref.current?.clientHeight || 0 })
@@ -86,7 +85,7 @@ function App() {
       console.log(imagecontainerref.current?.clientWidth)
       setWh({ width: imagecontainerref.current?.clientWidth || 0, height: imagecontainerref.current?.clientHeight || 0 })
     })
-  }, [])
+  }, [])*/
 
   const exportImg = () => {
     const uri = ref.current?.toDataURL({
